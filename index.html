@@ -1,292 +1,744 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- =====================================================
-       META & DOCUMENT SETUP
-       -----------------------------------------------------
-       Basic SEO, responsiveness, and branding.
-       ===================================================== -->
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Crown Fitness — Personal Training & Online Coaching in Nairobi</title>
+  <meta name="description" content="Science-backed personal training, online coaching and group classes in Nairobi. Build strength, lose fat and stay consistent with a plan made for your life.">
+  <meta name="theme-color" content="#0a0b0d">
+  <meta property="og:title" content="Crown Fitness — Train Hard. Live Strong.">
+  <meta property="og:description" content="1-on-1 personal training, online coaching and group classes in Nairobi. Your goals. Your schedule. Your plan.">
+  <meta property="og:type" content="website">
 
-  <title>MuseCode Executive — Boutique Legal & Consulting</title>
-
-  <!-- Main stylesheet (hand-coded, no frameworks) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- =====================================================
-       NAVIGATION BAR
-       -----------------------------------------------------
-       Fixed glass navigation with brand + mobile toggle.
-       ===================================================== -->
-  <nav class="nav" id="siteNav">
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Brand / Logo -->
-    <a href="#home" class="logo" style="text-decoration: none;">
-      <!-- Crown icon (SVG for crisp scaling) -->
-      <svg class="logo-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M5 16L3 5L8.5 10L12 4L15.5 10L21 5L19 16H5ZM19 19C19 19.5523 18.5523 20 18 20H6C5.44772 20 5 19.5523 5 19V18H19V19Z" fill="currentColor"/>
-      </svg>
-      <span>Crown Counsel</span>
-    </a>
+  <svg class="icon-sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="icon-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="icon-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="icon-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="icon-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="icon-star" viewBox="0 0 24 24"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9L12 2.6z" fill="currentColor"/></symbol>
+    <symbol id="icon-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 21l2.1-5.7A8.5 8.5 0 1 1 21 11.5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="8.6" cy="11.5" r="1" fill="currentColor"/><circle cx="12" cy="11.5" r="1" fill="currentColor"/><circle cx="15.4" cy="11.5" r="1" fill="currentColor"/></symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="icon-pin" viewBox="0 0 24 24"><path d="M20 10c0 5.2-8 11-8 11S4 15.2 4 10a8 8 0 1 1 16 0Z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.6" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="icon-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="icon-bolt" viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11l-1 8.5L19.5 10H13l0-8Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="icon-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="1.3" fill="currentColor"/></symbol>
+    <symbol id="icon-trophy" viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0V4Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 6H5v1a3 3 0 0 0 3 3M16 6h3v1a3 3 0 0 1-3 3M12 13v4M9 20h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="icon-crown" viewBox="0 0 24 24"><path d="M5 16 3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5Zm14 3c0 .55-.45 1-1 1H6c-.55 0-1-.45-1-1v-1h14v1Z" fill="currentColor"/></symbol>
+  </svg>
 
-    <!-- Mobile menu toggle (hamburger) -->
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </button>
+  <header class="site-header" id="siteHeader">
+    <nav class="nav container" aria-label="Primary navigation">
+      <a class="brand" href="#home" aria-label="Crown Fitness home">
+        <span class="brand-mark"><svg width="22" height="22" aria-hidden="true"><use href="#icon-crown"/></svg></span>
+        <span class="brand-text">Crown<span>Fitness</span></span>
+      </a>
 
-    <!-- Primary navigation links -->
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#practice">Practice Areas</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#builder">Plan builder</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li class="nav-panel-cta"><a class="btn btn-primary" href="#book">Book a free consult</a></li>
+      </ul>
 
-  <!-- =====================================================
-       HERO SECTION
-       -----------------------------------------------------
-       Full-screen introduction with CTA and lead form.
-       ===================================================== -->
-  <section id="home" class="hero">
-
-    <!-- Background image -->
-    <img
-      class="hero-bg"
-      src="https://images.unsplash.com/photo-1425421669292-0c3da3b8f529?q=80&w=1169"
-      alt="Luxurious office environment"
-    >
-
-    <div class="hero-overlay">
-
-      <!-- Hero text content -->
-      <div class="hero-content">
-        <h1>Providing Legal Excellence in Nairobi</h1>
-        <p>
-          At MuseCode Law, we combine traditional values with<br>
-          modern legal strategies to protect your assets and your future.
-        </p>
-        <a class="cta" href="#home">Request a Consultation</a>
+      <div class="nav-actions">
+        <a class="btn btn-primary btn-sm nav-cta" href="#book">Start today</a>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span><span></span>
+        </button>
       </div>
+    </nav>
+  </header>
+  <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
 
-      <!-- Glass contact / consultation card -->
-      <aside class="contact-card" id="contactCard">
-        <form>
-          <h3>Secure Your Legacy</h3>
+  <main id="main">
 
-          <label>
-            Name
-            <input type="text" placeholder="Full name">
-          </label>
-
-          <label>
-            Email
-            <input type="email" placeholder="you@company.com">
-          </label>
-
-          <label>
-            Message
-            <textarea placeholder="Brief message"></textarea>
-          </label>
-
-          <!-- Button type intentionally not submit (JS-controlled) -->
-          <button type="button">Request a Consultation</button>
-        </form>
-      </aside>
-
-    </div>
-  </section>
-
-  <!-- =====================================================
-       PRACTICE AREAS (BENTO GRID)
-       -----------------------------------------------------
-       Visual service showcase with hover interactions.
-       ===================================================== -->
-  <section id="practice" class="practice">
-    <div class="container">
-
-      <header class="section-header">
-        <span class="subtitle">Expertise</span>
-        <h2>Practice Areas</h2>
-      </header>
-
-      <div class="bento">
-
-        <div class="box family">
-          <img src="https://images.pexels.com/photos/1128316/pexels-photo-1128316.jpeg" alt="Family Law">
-          <div class="box-content">
-            <h3>Family Law</h3>
-            <p>Strategic counsel for personal transitions.</p>
-          </div>
-        </div>
-
-        <div class="box tax">
-          <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1011" alt="Tax Consulting">
-          <div class="box-content">
-            <h3>Tax Consulting</h3>
-            <p>Optimizing your fiscal footprint.</p>
-          </div>
-        </div>
-
-        <div class="box corporate">
-          <img src="https://images.unsplash.com/photo-1576605798419-69cd7731a100?q=80&w=687" alt="Corporate and M&A">
-          <div class="box-content">
-            <h3>Corporate &amp; M&amp;A</h3>
-            <p>Scaling businesses with legal precision.</p>
-          </div>
-        </div>
-
-        <div class="box litigation">
-          <img src="https://images.unsplash.com/photo-1676181739859-08330dea8999?q=80&w=1170" alt="Litigation">
-          <div class="box-content">
-            <h3>High-Stakes Litigation</h3>
-            <p>Aggressive representation in complex disputes.</p>
-          </div>
-        </div>
-
-        <div class="box ip">
-          <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1170" alt="Intellectual Property">
-          <div class="box-content">
-            <h3>Intellectual Property</h3>
-            <p>Protecting your creative capital.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- =====================================================
-       SOCIAL PROOF / STATS
-       -----------------------------------------------------
-       Animated counters controlled via JavaScript.
-       ===================================================== -->
-  <section class="social-proof">
-    <div class="proof-inner">
-
-      <div class="stat">
-        <div class="number" data-target="15">0</div>
-        <div class="label">Years Experience</div>
-      </div>
-
-      <div class="stat">
-        <div class="number" data-target="500">0</div>
-        <div class="label">Cases Won</div>
-      </div>
-
-      <div class="stat">
-        <div class="number" data-target="120">0</div>
-        <div class="label">Satisfied Clients</div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- =====================================================
-       ABOUT SECTION (PREMIUM)
-       -----------------------------------------------------
-       Brand story + values with image accent.
-       ===================================================== -->
-  <section id="about" class="about-premium">
-    <div class="container">
-      <div class="about-grid">
-
-        <div class="about-text">
-          <span class="subtitle">Our Story</span>
-          <h2>Redefining Legal Excellence in Nairobi</h2>
-
-          <p class="lead">
-            Established at the intersection of tradition and innovation,
-            Crown Counsel (by MuseCode) is a boutique legal practice
-            dedicated to high-stakes solutions.
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="hero-eyebrow"><span class="dot"></span>Nairobi · In-person & online</span>
+          <h1 class="hero-title">
+            <span class="line">Train hard.</span>
+            <span class="line">Live <span class="accent">strong.</span></span>
+          </h1>
+          <p class="hero-sub">
+            Personal training, online coaching and group classes designed around your body,
+            your schedule and the life you actually live. No fads. Just a plan that works.
           </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#builder">Build my plan <svg width="18" height="18" aria-hidden="true"><use href="#icon-arrow-right"/></svg></a>
+            <a class="btn btn-ghost" href="#book">Book a free consult</a>
+          </div>
+          <div class="hero-trust">
+            <div class="avatar-stack" aria-hidden="true">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=80&q=80" alt="">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=80&q=80" alt="">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&q=80" alt="">
+            </div>
+            <div class="trust-text">
+              <strong>300+ people coached</strong>
+              <span class="stars" aria-label="Rated 4.9 out of 5">
+                <svg width="12" height="12"><use href="#icon-star"/></svg>
+                <svg width="12" height="12"><use href="#icon-star"/></svg>
+                <svg width="12" height="12"><use href="#icon-star"/></svg>
+                <svg width="12" height="12"><use href="#icon-star"/></svg>
+                <svg width="12" height="12"><use href="#icon-star"/></svg>
+              </span>
+              4.9/5 average rating
+            </div>
+          </div>
+        </div>
 
+        <div class="hero-visual">
+          <div class="hero-media">
+            <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=1000&q=80" alt="Athlete training on a pull-up bar in the gym" fetchpriority="high">
+            <span class="hero-badge"><span class="dot"></span>2 spots left for 1-on-1</span>
+            <div class="hero-media-content">
+              <div class="coach-chip">
+                <strong>Coach Amara Njeri</strong>
+                <span>NASM-CPT · 12 yrs experience</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-float" aria-hidden="true">
+            <div class="float-head"><span>This week</span><strong>92%</strong></div>
+            <div class="float-metric">4/4 sessions</div>
+            <div class="bars">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-group">
+          <span class="marquee-item">Strength training</span>
+          <span class="marquee-item">Fat loss</span>
+          <span class="marquee-item">Mobility</span>
+          <span class="marquee-item">Nutrition</span>
+          <span class="marquee-item">Accountability</span>
+          <span class="marquee-item">Real results</span>
+        </div>
+        <div class="marquee-group">
+          <span class="marquee-item">Strength training</span>
+          <span class="marquee-item">Fat loss</span>
+          <span class="marquee-item">Mobility</span>
+          <span class="marquee-item">Nutrition</span>
+          <span class="marquee-item">Accountability</span>
+          <span class="marquee-item">Real results</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="section builder" id="builder">
+      <div class="container">
+        <div class="section-head section-head--split" data-reveal>
+          <div>
+            <span class="eyebrow">Interactive plan builder</span>
+            <h2 class="section-title">Your goals. Your schedule. Your plan.</h2>
+          </div>
+          <p class="section-sub">Answer three quick questions and get a starting point built around your life — not the other way around.</p>
+        </div>
+
+        <div class="builder-shell">
+          <div class="builder-panel" data-reveal>
+            <fieldset class="builder-step">
+              <legend><span class="index">01</span>What's your main goal?</legend>
+              <div class="chips" data-group="goal">
+                <button class="chip" type="button" data-group="goal" data-value="muscle" aria-pressed="true">Build muscle</button>
+                <button class="chip" type="button" data-group="goal" data-value="fat" aria-pressed="false">Lose fat</button>
+                <button class="chip" type="button" data-group="goal" data-value="strength" aria-pressed="false">Get stronger</button>
+                <button class="chip" type="button" data-group="goal" data-value="endurance" aria-pressed="false">Boost endurance</button>
+                <button class="chip" type="button" data-group="goal" data-value="health" aria-pressed="false">Feel healthier</button>
+              </div>
+            </fieldset>
+
+            <fieldset class="builder-step">
+              <legend><span class="index">02</span>Where are you starting from?</legend>
+              <div class="chips" data-group="level">
+                <button class="chip" type="button" data-group="level" data-value="beginner" aria-pressed="false">New to training</button>
+                <button class="chip" type="button" data-group="level" data-value="intermediate" aria-pressed="true">Some experience</button>
+                <button class="chip" type="button" data-group="level" data-value="advanced" aria-pressed="false">Advanced</button>
+              </div>
+            </fieldset>
+
+            <fieldset class="builder-step">
+              <legend><span class="index">03</span>How many days can you train?</legend>
+              <div class="chips" data-group="days">
+                <button class="chip" type="button" data-group="days" data-value="2" aria-pressed="false">2 days</button>
+                <button class="chip" type="button" data-group="days" data-value="3" aria-pressed="false">3 days</button>
+                <button class="chip" type="button" data-group="days" data-value="4" aria-pressed="true">4 days</button>
+                <button class="chip" type="button" data-group="days" data-value="5" aria-pressed="false">5 days</button>
+              </div>
+            </fieldset>
+
+            <p class="builder-note">
+              <svg width="18" height="18" aria-hidden="true"><use href="#icon-bolt"/></svg>
+              Your plan updates live. Nothing is set in stone — we refine it together in your first consult.
+            </p>
+          </div>
+
+          <aside class="plan-card" aria-live="polite" data-reveal>
+            <div class="plan-top">
+              <span class="plan-label"><span class="live-dot"></span>Your recommended plan</span>
+              <span class="plan-badge" id="planBadge">Some experience</span>
+            </div>
+            <h3 class="plan-title" id="planTitle">Hypertrophy Builder</h3>
+            <p class="plan-blurb" id="planBlurb">Progressive strength work with enough volume to add lean size — without living in the gym.</p>
+            <div class="plan-tags" id="planTags">
+              <span class="tag">Muscle</span><span class="tag">Strength</span><span class="tag">Recovery</span>
+            </div>
+
+            <div class="plan-meta">
+              <div><span class="meta-label">Sessions</span><span class="meta-value" id="planSessions">4 / wk</span></div>
+              <div><span class="meta-label">Session length</span><span class="meta-value" id="planLength">55 min</span></div>
+              <div><span class="meta-label">Style</span><span class="meta-value" id="planStyle">Hybrid</span></div>
+            </div>
+
+            <div class="week-head"><span>Sample week</span><span>Rest = growth</span></div>
+            <div class="week-grid" id="planWeek"></div>
+
+            <ul class="plan-includes">
+              <li><svg width="15" height="15" aria-hidden="true"><use href="#icon-check"/></svg>Custom training plan in the app</li>
+              <li><svg width="15" height="15" aria-hidden="true"><use href="#icon-check"/></svg>Weekly check-ins and form reviews</li>
+              <li><svg width="15" height="15" aria-hidden="true"><use href="#icon-check"/></svg>Nutrition targets that fit your routine</li>
+            </ul>
+
+            <a class="btn btn-primary btn-block" href="#book" id="planCta">Start this plan <svg width="18" height="18" aria-hidden="true"><use href="#icon-arrow-right"/></svg></a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section programs" id="programs">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Ways to work together</span>
+          <h2 class="section-title">Coaching built around you</h2>
+          <p class="section-sub">Whether you want eyes on every rep or a plan you can run from anywhere, there's a lane for you.</p>
+        </div>
+
+        <div class="program-grid">
+          <article class="program-card" data-reveal>
+            <div class="program-media">
+              <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=900&q=80" alt="Client training during a one-on-one strength session" loading="lazy">
+              <span class="program-tag">Most personal</span>
+            </div>
+            <div class="program-body">
+              <div class="program-top">
+                <h3>1-on-1 Personal Training</h3>
+                <span class="program-price">From KES 4,500/session</span>
+              </div>
+              <p>Private coaching in Nairobi with every rep checked, every week adjusted and zero guesswork.</p>
+              <ul class="program-features">
+                <li><svg width="14" height="14" aria-hidden="true"><use href="#icon-check"/></svg>Private studio</li>
+                <li><svg width="14" height="14" aria-hidden="true"><use href="#icon-check"/></svg>Form-first coaching</li>
+                <li><svg width="14" height="14" aria-hidden="true"><use href="#icon-check"/></svg>Flexible scheduling</li>
+              </ul>
+              <a class="program-link" href="#book">Enquire about 1-on-1 <svg width="16" height="16" aria-hidden="true"><use href="#icon-arrow-up-right"/></svg></a>
+            </div>
+          </article>
+
+          <article class="program-card" data-reveal>
+            <div class="program-media">
+              <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=900&q=80" alt="Athlete training with weights in a gym" loading="lazy">
+              <span class="program-tag">Train anywhere</span>
+            </div>
+            <div class="program-body">
+              <div class="program-top">
+                <h3>Online Coaching</h3>
+                <span class="program-price">From KES 12,000/mo</span>
+              </div>
+              <p>Full programming, weekly check-ins and direct access to your coach — wherever you are.</p>
+              <ul class="program-features">
+                <li><svg width="14" height="14" aria-hidden="true"><use href="#icon-check"/></svg>App-based plan</li>
+                <li><svg width="14" height="14" aria-hidden="true"><use href="#icon-check"/></svg>Video form reviews</li>
+                <li><svg width="14" height="14" aria-hidden="true"><use href="#icon-check"/></svg>Weekly calls</li>
+              </ul>
+              <a class="program-link" href="#book">Start online coaching <svg width="16" height="16" aria-hidden="true"><use href="#icon-arrow-up-right"/></svg></a>
+            </div>
+          </article>
+
+          <article class="program-card" data-reveal>
+            <div class="program-media">
+              <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=900&q=80" alt="Group fitness class training together" loading="lazy">
+              <span class="program-tag">Best energy</span>
+            </div>
+            <div class="program-body">
+              <div class="program-top">
+                <h3>Small Group Training</h3>
+                <span class="program-price">From KES 2,500/session</span>
+              </div>
+              <p>Three to six people, one coach, and the kind of accountability that makes showing up easy.</p>
+              <ul class="program-features">
+                <li><svg width="14" height="14" aria-hidden="true"><use href="#icon-check"/></svg>Max 6 people</li>
+                <li><svg width="14" height="14" aria-hidden="true"><use href="#icon-check"/></svg>Beginner friendly</li>
+                <li><svg width="14" height="14" aria-hidden="true"><use href="#icon-check"/></svg>Weekly schedule</li>
+              </ul>
+              <a class="program-link" href="#book">Join a group session <svg width="16" height="16" aria-hidden="true"><use href="#icon-arrow-up-right"/></svg></a>
+            </div>
+          </article>
+
+          <article class="program-card" data-reveal>
+            <div class="program-media">
+              <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=900&q=80" alt="Colourful healthy meal preparation" loading="lazy">
+              <span class="program-tag">No crash diets</span>
+            </div>
+            <div class="program-body">
+              <div class="program-top">
+                <h3>Nutrition Coaching</h3>
+                <span class="program-price">From KES 8,000/mo</span>
+              </div>
+              <p>Practical nutrition habits around real food, your culture and a schedule that doesn't stand still.</p>
+              <ul class="program-features">
+                <li><svg width="14" height="14" aria-hidden="true"><use href="#icon-check"/></svg>Habit-based</li>
+                <li><svg width="14" height="14" aria-hidden="true"><use href="#icon-check"/></svg>Flexible tracking</li>
+                <li><svg width="14" height="14" aria-hidden="true"><use href="#icon-check"/></svg>Bi-weekly reviews</li>
+              </ul>
+              <a class="program-link" href="#book">Fix your nutrition <svg width="16" height="16" aria-hidden="true"><use href="#icon-arrow-up-right"/></svg></a>
+            </div>
+          </article>
+        </div>
+
+        <div class="programs-foot" data-reveal>
+          <p><strong>Every plan includes</strong> app access, weekly check-ins, form feedback and direct WhatsApp support.</p>
+          <div class="features-inline">
+            <span><svg width="15" height="15" aria-hidden="true"><use href="#icon-check"/></svg>No lock-in contracts</span>
+            <span><svg width="15" height="15" aria-hidden="true"><use href="#icon-check"/></svg>Cancel anytime</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="container stats-grid">
+        <div class="stat-item">
+          <div class="stat-number"><span data-count="300" data-suffix="+">0</span></div>
+          <div class="stat-label">Clients coached</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number"><span data-count="12" data-suffix="">0</span></div>
+          <div class="stat-label">Years experience</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number"><span data-count="4800" data-suffix="+">0</span></div>
+          <div class="stat-label">Sessions delivered</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number"><span data-count="4.9" data-decimals="1" data-suffix="">0</span></div>
+          <div class="stat-label">Average rating</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="container split">
+        <div class="about-media" data-reveal>
+          <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=900&q=80" alt="Coach Amara Njeri training in the studio" loading="lazy">
+          <div class="about-credential">
+            <span class="credential-icon"><svg width="18" height="18" aria-hidden="true"><use href="#icon-trophy"/></svg></span>
+            <div><strong>NASM-CPT · Precision Nutrition L1</strong><span>Certified, insured and obsessed with the details.</span></div>
+          </div>
+        </div>
+
+        <div class="about-copy" data-reveal>
+          <span class="eyebrow">Meet your coach</span>
+          <h2 class="section-title">Hi, I'm Amara.</h2>
           <p>
-            We don't just provide advice; we build legacies. Our firm was
-            founded on the belief that modern enterprises and individuals
-            require more than just a lawyer—they require a strategic
-            partner.
+            I've spent the last 12 years helping busy people in Nairobi get stronger without
+            putting their lives on hold. No two clients get the same plan — because no two
+            bodies, schedules or starting points are the same.
+          </p>
+          <p>
+            My approach is simple: build strength first, make the habits sustainable, and measure
+            what actually matters. You'll always know what you're doing, why you're doing it and
+            what comes next.
           </p>
 
-          <div class="values-grid">
-            <div class="value-item">
-              <h4>Precision</h4>
-              <p>Every clause and strategy is crafted with meticulous attention to detail.</p>
+          <div class="values">
+            <div class="value">
+              <span class="value-icon"><svg width="16" height="16" aria-hidden="true"><use href="#icon-target"/></svg></span>
+              <div><strong>Personal, not generic</strong><span>Programming built around your body and schedule.</span></div>
             </div>
-            <div class="value-item">
-              <h4>Discretion</h4>
-              <p>We uphold the highest standards of confidentiality for our elite clientele.</p>
+            <div class="value">
+              <span class="value-icon"><svg width="16" height="16" aria-hidden="true"><use href="#icon-bolt"/></svg></span>
+              <div><strong>Simple, not easy</strong><span>Clear steps you can repeat on your busiest weeks.</span></div>
             </div>
+            <div class="value">
+              <span class="value-icon"><svg width="16" height="16" aria-hidden="true"><use href="#icon-trophy"/></svg></span>
+              <div><strong>Measured, not guessed</strong><span>Strength, energy and body composition tracked.</span></div>
+            </div>
+            <div class="value">
+              <span class="value-icon"><svg width="16" height="16" aria-hidden="true"><use href="#icon-chat"/></svg></span>
+              <div><strong>Honest, always</strong><span>Real feedback and a coach who listens.</span></div>
+            </div>
+          </div>
+
+          <div class="signature">
+            <div><span class="sig-name">Amara Njeri</span><span class="sig-role">Founder & Head Coach</span></div>
+            <a class="btn btn-ghost btn-sm" href="#book">Train with Amara</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section results" id="results">
+      <div class="container results-shell">
+        <div class="results-intro" data-reveal>
+          <span class="eyebrow">Client results</span>
+          <h2 class="section-title">Results that stick.</h2>
+          <p class="section-sub">No crash diets, no shortcuts. Just consistent work, smart programming and people who kept showing up.</p>
+
+          <div class="rating-big">
+            <span class="rating-number">4.9</span>
+            <div>
+              <span class="stars large" aria-hidden="true">
+                <svg width="16" height="16"><use href="#icon-star"/></svg>
+                <svg width="16" height="16"><use href="#icon-star"/></svg>
+                <svg width="16" height="16"><use href="#icon-star"/></svg>
+                <svg width="16" height="16"><use href="#icon-star"/></svg>
+                <svg width="16" height="16"><use href="#icon-star"/></svg>
+              </span>
+              <span class="rating-caption">From 180+ verified client reviews</span>
+            </div>
+          </div>
+
+          <div class="carousel-controls">
+            <button class="carousel-btn" id="prevSlide" type="button" aria-label="Previous testimonial"><svg width="20" height="20" aria-hidden="true"><use href="#icon-arrow-left"/></svg></button>
+            <button class="carousel-btn" id="nextSlide" type="button" aria-label="Next testimonial"><svg width="20" height="20" aria-hidden="true"><use href="#icon-arrow-right"/></svg></button>
+            <span class="carousel-count" id="carouselCount">01 / 04</span>
           </div>
         </div>
 
-        <div class="about-image">
-          <img
-            src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1171"
-            alt="The MuseCode Standard"
-          >
+        <div class="testimonial-shell" data-reveal>
+          <div class="testimonial-viewport" id="testimonialViewport" aria-roledescription="carousel" aria-label="Client testimonials">
+            <div class="testimonial-track" id="testimonialTrack">
+              <div class="testimonial-slide" role="group" aria-roledescription="slide" aria-label="1 of 4">
+                <article class="quote-card">
+                  <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+                  <p class="quote-text">I'd tried every app and program. Amara was the first coach who adjusted the plan to my actual life. Down 14kg and stronger than I've ever been.</p>
+                  <div class="quote-meta">
+                    <span class="quote-avatar" aria-hidden="true">WM</span>
+                    <div class="quote-person"><strong>Wanjiru M.</strong><span>Fat loss · 16 weeks</span></div>
+                    <span class="quote-result">−14 kg</span>
+                  </div>
+                </article>
+              </div>
+              <div class="testimonial-slide" role="group" aria-roledescription="slide" aria-label="2 of 4">
+                <article class="quote-card">
+                  <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+                  <p class="quote-text">Deadlift went from 80kg to 140kg in six months. The programming is smart, the feedback is honest, and the results speak for themselves.</p>
+                  <div class="quote-meta">
+                    <span class="quote-avatar" aria-hidden="true">KO</span>
+                    <div class="quote-person"><strong>Kevin O.</strong><span>Strength coaching · 24 weeks</span></div>
+                    <span class="quote-result">+60 kg</span>
+                  </div>
+                </article>
+              </div>
+              <div class="testimonial-slide" role="group" aria-roledescription="slide" aria-label="3 of 4">
+                <article class="quote-card">
+                  <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+                  <p class="quote-text">Training online from Mombasa felt like having a coach next door. The weekly check-ins keep me accountable, even on the weeks I'd rather skip.</p>
+                  <div class="quote-meta">
+                    <span class="quote-avatar" aria-hidden="true">ZA</span>
+                    <div class="quote-person"><strong>Zainab A.</strong><span>Online coaching · 12 weeks</span></div>
+                    <span class="quote-result">3× consistency</span>
+                  </div>
+                </article>
+              </div>
+              <div class="testimonial-slide" role="group" aria-roledescription="slide" aria-label="4 of 4">
+                <article class="quote-card">
+                  <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+                  <p class="quote-text">The group sessions are brutal in the best way. I actually look forward to Mondays now — and I just finished my first 10K.</p>
+                  <div class="quote-meta">
+                    <span class="quote-avatar" aria-hidden="true">PN</span>
+                    <div class="quote-person"><strong>Peter N.</strong><span>Group training · 20 weeks</span></div>
+                    <span class="quote-result">First 10K</span>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+          <div class="dots" id="carouselDots" aria-label="Choose testimonial"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pricing" id="pricing">
+      <div class="container">
+        <div class="section-head centered" data-reveal>
+          <span class="eyebrow">Simple pricing</span>
+          <h2 class="section-title">Invest in the version of you that lasts</h2>
+          <p class="section-sub">No joining fees, no lock-in contracts. Pick the level of support you need and change it as you go.</p>
         </div>
 
+        <div class="billing-wrap" data-reveal>
+          <div class="billing-toggle" role="group" aria-label="Billing period">
+            <button class="billing-btn" id="billingMonthly" type="button" aria-pressed="true">Monthly</button>
+            <button class="billing-btn" id="billingQuarterly" type="button" aria-pressed="false">Quarterly <span class="save">Save 15%</span></button>
+          </div>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="price-card" data-reveal>
+            <span class="price-name">Online Coaching</span>
+            <p class="price-desc">For self-starters who want expert programming and accountability from anywhere.</p>
+            <div class="price-row">
+              <span class="currency">KES</span>
+              <span class="price-amount" data-monthly="12000" data-quarterly="10200">12,000</span>
+              <span class="per">/ month</span>
+            </div>
+            <p class="price-billed">Billed monthly. Cancel anytime.</p>
+            <ul class="price-features">
+              <li><svg width="16" height="16" aria-hidden="true"><use href="#icon-check"/></svg>Custom training plan in the app</li>
+              <li><svg width="16" height="16" aria-hidden="true"><use href="#icon-check"/></svg>Weekly check-in call</li>
+              <li><svg width="16" height="16" aria-hidden="true"><use href="#icon-check"/></svg>Video form reviews</li>
+              <li><svg width="16" height="16" aria-hidden="true"><use href="#icon-check"/></svg>Nutrition targets &amp; habits</li>
+              <li><svg width="16" height="16" aria-hidden="true"><use href="#icon-check"/></svg>WhatsApp support</li>
+            </ul>
+            <a class="btn btn-ghost btn-block" href="#book">Start online</a>
+          </article>
+
+          <article class="price-card price-card--featured" data-reveal>
+            <span class="popular-badge">Most popular</span>
+            <span class="price-name">Hybrid Coaching</span>
+            <p class="price-desc">The sweet spot: in-person coaching plus a full online plan between sessions.</p>
+            <div class="price-row">
+              <span class="currency">KES</span>
+              <span class="price-amount" data-monthly="25000" data-quarterly="21250">25,000</span>
+              <span class="per">/ month</span>
+            </div>
+            <p class="price-billed">Billed monthly. Cancel anytime.</p>
+            <ul class="price-features">
+              <li><svg width="16" height="16" aria-hidden="true"><use href="#icon-check"/></svg>2 in-person sessions per week</li>
+              <li><svg width="16" height="16" aria-hidden="true"><use href="#icon-check"/></svg>Everything in Online Coaching</li>
+              <li><svg width="16" height="16" aria-hidden="true"><use href="#icon-check"/></svg>Monthly body composition scan</li>
+              <li><svg width="16" height="16" aria-hidden="true"><use href="#icon-check"/></svg>Priority session scheduling</li>
+              <li><svg width="16" height="16" aria-hidden="true"><use href="#icon-check"/></svg>Quarterly performance test</li>
+            </ul>
+            <a class="btn btn-primary btn-block" href="#book">Book a free consult</a>
+          </article>
+
+          <article class="price-card" data-reveal>
+            <span class="price-name">1-on-1 Elite</span>
+            <p class="price-desc">Maximum support for a busy season of life or a specific performance goal.</p>
+            <div class="price-row">
+              <span class="currency">KES</span>
+              <span class="price-amount" data-monthly="40000" data-quarterly="34000">40,000</span>
+              <span class="per">/ month</span>
+            </div>
+            <p class="price-billed">Billed monthly. Cancel anytime.</p>
+            <ul class="price-features">
+              <li><svg width="16" height="16" aria-hidden="true"><use href="#icon-check"/></svg>4 private sessions per week</li>
+              <li><svg width="16" height="16" aria-hidden="true"><use href="#icon-check"/></svg>Everything in Hybrid Coaching</li>
+              <li><svg width="16" height="16" aria-hidden="true"><use href="#icon-check"/></svg>Full nutrition coaching</li>
+              <li><svg width="16" height="16" aria-hidden="true"><use href="#icon-check"/></svg>Recovery &amp; mobility plan</li>
+              <li><svg width="16" height="16" aria-hidden="true"><use href="#icon-check"/></svg>Direct line to your coach</li>
+            </ul>
+            <a class="btn btn-ghost btn-block" href="#book">Apply for Elite</a>
+          </article>
+        </div>
+
+        <p class="pricing-note" id="pricingNote">All plans include a free 20-minute consult. Prices in Kenyan shillings.</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- =====================================================
-       FOOTER / CONTACT
-       -----------------------------------------------------
-       Brand recap, navigation, and office details.
-       ===================================================== -->
-  <footer id="contact" class="site-footer">
-    <div class="footer-container">
+    <section class="section faq" id="faq">
+      <div class="container faq-grid">
+        <div class="faq-aside" data-reveal>
+          <span class="eyebrow">Good questions</span>
+          <h2 class="section-title">Before you start</h2>
+          <p class="section-sub">Still unsure? A free consult is the fastest way to get a straight answer.</p>
+          <a class="btn btn-ghost" href="#book">Ask Amara directly <svg width="18" height="18" aria-hidden="true"><use href="#icon-arrow-right"/></svg></a>
+        </div>
 
-      <!-- Brand column -->
-      <div class="footer-brand">
-        <div class="logo">Crown Counsel</div>
-        <p>Boutique Legal &amp; Consulting Solutions for the Modern Era.</p>
+        <div class="faq-list" data-reveal>
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="true" aria-controls="faq1" id="faqBtn1">Do I need a gym membership?<span class="faq-icon" aria-hidden="true"></span></button>
+            <div class="faq-a" id="faq1" role="region" aria-labelledby="faqBtn1"><div class="faq-a-inner">In-person sessions run from a private studio in Westlands, so no membership is needed. Online clients need very little equipment — I'll build around what you have, even if that's just a pair of dumbbells and a chair.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq2" id="faqBtn2">I'm a complete beginner. Is that okay?<span class="faq-icon" aria-hidden="true"></span></button>
+            <div class="faq-a" id="faq2" role="region" aria-labelledby="faqBtn2"><div class="faq-a-inner">Absolutely — most new clients start from zero. We begin with movement quality, confidence and a schedule you can actually keep, then layer on load and complexity as you progress.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq3" id="faqBtn3">How fast will I see results?<span class="faq-icon" aria-hidden="true"></span></button>
+            <div class="faq-a" id="faq3" role="region" aria-labelledby="faqBtn3"><div class="faq-a-inner">Most clients feel stronger and sleep better within 2–3 weeks. Visible changes usually show up between 8 and 12 weeks of consistent training and nutrition. We track strength, measurements and energy so progress isn't just a feeling.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq4" id="faqBtn4">Can I train online from outside Nairobi?<span class="faq-icon" aria-hidden="true"></span></button>
+            <div class="faq-a" id="faq4" role="region" aria-labelledby="faqBtn4"><div class="faq-a-inner">Yes. Online clients train with me from across Kenya and abroad. You'll get your plan in the app, submit form videos, and hop on a weekly video check-in. Time zones are easy to work around.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq5" id="faqBtn5">What if I miss a session?<span class="faq-icon" aria-hidden="true"></span></button>
+            <div class="faq-a" id="faq5" role="region" aria-labelledby="faqBtn5"><div class="faq-a-inner">Life happens. In-person sessions can be rescheduled with 12 hours' notice. Online sessions are recorded, and your plan stays in the app so you can pick up exactly where you left off.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq6" id="faqBtn6">Do you offer meal plans?<span class="faq-icon" aria-hidden="true"></span></button>
+            <div class="faq-a" id="faq6" role="region" aria-labelledby="faqBtn6"><div class="faq-a-inner">I don't hand out rigid meal plans. Instead, we set calorie and protein targets, build habits around food you already enjoy, and adjust weekly. It's designed to survive real life — weddings, travel and all.</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!-- Social media links -->
-        <div class="social-links">
-          <a href="#" aria-label="LinkedIn">...</a>
-          <a href="#" aria-label="X (Twitter)">...</a>
-          <a href="#" aria-label="Instagram">...</a>
+    <section class="section booking" id="book">
+      <div class="container book-shell">
+        <div class="book-copy" data-reveal>
+          <span class="eyebrow">Your next step</span>
+          <h2 class="section-title">Let's build your plan.</h2>
+          <p class="section-sub">Tell me where you are and where you want to go. I'll reply within 24 hours with honest advice and the right next step — even if that isn't working with me.</p>
+
+          <ul class="book-list">
+            <li><span class="step-num">1</span><div><strong>Free 20-minute consult</strong><span>We talk goals, history and what's getting in the way.</span></div></li>
+            <li><span class="step-num">2</span><div><strong>Your starting plan</strong><span>A clear training and nutrition direction within 48 hours.</span></div></li>
+            <li><span class="step-num">3</span><div><strong>First session</strong><span>We move, we measure, and we get to work.</span></div></li>
+          </ul>
+
+          <div class="contact-links">
+            <a href="https://wa.me/254700000000" target="_blank" rel="noopener">
+              <span class="contact-icon"><svg width="18" height="18" aria-hidden="true"><use href="#icon-chat"/></svg></span>
+              <span><strong>WhatsApp</strong><span>+254 700 000 000</span></span>
+              <svg class="contact-arrow" width="16" height="16" aria-hidden="true"><use href="#icon-arrow-up-right"/></svg>
+            </a>
+            <a href="mailto:hello@crownfitness.co.ke">
+              <span class="contact-icon"><svg width="18" height="18" aria-hidden="true"><use href="#icon-mail"/></svg></span>
+              <span><strong>Email</strong><span>hello@crownfitness.co.ke</span></span>
+              <svg class="contact-arrow" width="16" height="16" aria-hidden="true"><use href="#icon-arrow-up-right"/></svg>
+            </a>
+            <a href="https://maps.google.com/?q=Westlands,Nairobi" target="_blank" rel="noopener">
+              <span class="contact-icon"><svg width="18" height="18" aria-hidden="true"><use href="#icon-pin"/></svg></span>
+              <span><strong>Studio</strong><span>Westlands, Nairobi</span></span>
+              <svg class="contact-arrow" width="16" height="16" aria-hidden="true"><use href="#icon-arrow-up-right"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="form-card" id="formCard" data-reveal>
+          <div class="form-head">
+            <h3>Book your free consult</h3>
+            <p>No pressure, no sales pitch. Just a conversation about your goals.</p>
+          </div>
+
+          <form id="bookingForm" novalidate>
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="name">Full name</label>
+                <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" required>
+                <span class="error-msg">Please enter your name.</span>
+              </div>
+              <div class="form-field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+                <span class="error-msg">Please enter a valid email.</span>
+              </div>
+              <div class="form-field">
+                <label for="phone">Phone <span class="optional">(optional)</span></label>
+                <input id="phone" name="phone" type="tel" placeholder="+254 7XX XXX XXX" autocomplete="tel">
+              </div>
+              <div class="form-field">
+                <label for="goal">Main goal</label>
+                <div class="select-wrap">
+                  <select id="goal" name="goal">
+                    <option value="muscle">Build muscle</option>
+                    <option value="fat">Lose fat</option>
+                    <option value="strength">Get stronger</option>
+                    <option value="endurance">Boost endurance</option>
+                    <option value="health">Feel healthier</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-field full">
+                <label for="message">Anything I should know? <span class="optional">(optional)</span></label>
+                <textarea id="message" name="message" rows="4" placeholder="Injuries, schedule, experience, what you've tried before..."></textarea>
+              </div>
+            </div>
+
+            <button class="btn btn-primary btn-block" type="submit">Request my free consult <svg width="18" height="18" aria-hidden="true"><use href="#icon-arrow-right"/></svg></button>
+            <p class="form-footnote"><svg width="14" height="14" aria-hidden="true"><use href="#icon-lock"/></svg>Your details stay private. No spam, ever.</p>
+          </form>
+
+          <div class="form-success" id="formSuccess" role="status" aria-live="polite">
+            <span class="success-icon"><svg width="28" height="28" aria-hidden="true"><use href="#icon-check"/></svg></span>
+            <h3>You're in!</h3>
+            <p>Thanks, <span id="successName">friend</span>. I'll reply within 24 hours to lock in your free consult.</p>
+            <a class="btn btn-ghost" href="https://wa.me/254700000000" target="_blank" rel="noopener">Message me on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="#home" aria-label="Crown Fitness home">
+            <span class="brand-mark"><svg width="22" height="22" aria-hidden="true"><use href="#icon-crown"/></svg></span>
+            <span class="brand-text">Crown<span>Fitness</span></span>
+          </a>
+          <p>Personal training, online coaching and group classes for people who want to get strong and stay strong.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram">IG</a>
+            <a href="#" aria-label="YouTube">YT</a>
+            <a href="#" aria-label="TikTok">TT</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#programs">Programs</a></li>
+            <li><a href="#builder">Plan builder</a></li>
+            <li><a href="#results">Results</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Coaching</h4>
+          <ul>
+            <li><a href="#programs">1-on-1 training</a></li>
+            <li><a href="#programs">Online coaching</a></li>
+            <li><a href="#programs">Group training</a></li>
+            <li><a href="#programs">Nutrition</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-contact">
+          <h4>Get in touch</h4>
+          <p>Westlands, Nairobi</p>
+          <p>+254 700 000 000</p>
+          <p>hello@crownfitness.co.ke</p>
+          <a class="footer-book" href="#book">Book a free consult <svg width="15" height="15" aria-hidden="true"><use href="#icon-arrow-right"/></svg></a>
         </div>
       </div>
 
-      <!-- Footer navigation -->
-      <div class="footer-links">
-        <h4>Navigation</h4>
-        <ul>
-          <li><a href="#practice">Practice Areas</a></li>
-          <li><a href="#about">Our Story</a></li>
-          <li><a href="#home">Consultation</a></li>
-        </ul>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year">2026</span> Crown Fitness. All rights reserved.</p>
+        <p>Built for people who show up.</p>
       </div>
-
-      <!-- Office details -->
-      <div class="footer-contact">
-        <h4>Nairobi Office</h4>
-        <p>Westlands Business District</p>
-        <p>+254 700 000 000</p>
-        <p>counsel@musecode.co.ke</p>
-      </div>
-
-    </div>
-
-    <div class="footer-bottom">
-      <p>&copy; 2025 Crown Counsel. Hand-coded by MuseCode.</p>
     </div>
   </footer>
 
-  <!-- =====================================================
-       SCRIPTS
-       -----------------------------------------------------
-       Navigation toggle, scroll effects, counters.
-       ===================================================== -->
-  <script src="script.js"></script>
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+    <svg width="18" height="18" aria-hidden="true"><use href="#icon-arrow-left"/></svg>
+  </button>
 
+  <script src="script.js"></script>
 </body>
 </html>
