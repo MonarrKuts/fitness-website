@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
   });
 
-  const setMenu = (open) => {
+  const setMenu = (open, focusFirst = false) => {
     const wasOpen = navLinks.classList.contains('is-open');
 
     menuToggle.classList.toggle('is-open', open);
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     menuToggle.setAttribute('aria-expanded', String(open));
     menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
 
-    if (open) {
+    if (open && focusFirst) {
       requestAnimationFrame(() => {
         const firstLink = navLinks.querySelector('a');
         if (firstLink) firstLink.focus();
@@ -39,8 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  menuToggle.addEventListener('click', () => {
-    setMenu(!navLinks.classList.contains('is-open'));
+  menuToggle.addEventListener('click', (event) => {
+    const open = !navLinks.classList.contains('is-open');
+    setMenu(open, event.detail === 0);
   });
 
   navBackdrop.addEventListener('click', () => setMenu(false));
@@ -49,6 +50,22 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', () => setMenu(false));
   });
 
+  const headerBrand = document.querySelector('.site-header .brand');
+  if (headerBrand) headerBrand.addEventListener('click', () => setMenu(false));
+
+  let touchStartX = null;
+
+  navLinks.addEventListener('touchstart', (event) => {
+    touchStartX = event.touches[0].clientX;
+  }, { passive: true });
+
+  navLinks.addEventListener('touchend', (event) => {
+    if (touchStartX === null) return;
+    const deltaX = event.changedTouches[0].clientX - touchStartX;
+    touchStartX = null;
+    if (deltaX > 70) setMenu(false);
+  }, { passive: true });
+
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && navLinks.classList.contains('is-open')) {
       setMenu(false);
@@ -56,7 +73,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (event.key === 'Tab' && navLinks.classList.contains('is-open')) {
-      const focusable = [...navLinks.querySelectorAll('a'), menuToggle];
+      const focusable = [
+        ...navLinks.querySelectorAll('a[href], button'),
+        menuToggle
+      ].filter((el) => el.offsetParent !== null);
       const first = focusable[0];
       const last = focusable[focusable.length - 1];
 
@@ -532,7 +552,7 @@ document.addEventListener('DOMContentLoaded', () => {
     formSuccess.focus({ preventScroll: true });
   });
 
-  const navSectionLinks = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
+  const navSectionLinks = Array.from(document.querySelectorAll('.nav-links a[href^="#"]:not(.btn)'));
 
   if ('IntersectionObserver' in window) {
     const sectionObserver = new IntersectionObserver(
